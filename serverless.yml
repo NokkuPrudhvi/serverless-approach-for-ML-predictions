@@ -22,7 +22,7 @@ package:
 
 
 functions:
-  predict-price-2:
+  predict-price-3:
     handler: handler.predict
     memorySize: 512
     timeout: 30
