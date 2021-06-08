@@ -1,0 +1,44 @@
+provider:
+  name: aws
+  runtime: python3.6
+  stage: dev
+  region: us-west-2
+
+# you can add packaging information here
+package:
+#  include:
+#    - include-me.py
+#    - include-me-dir/**
+  exclude:
+    - node_modules/**
+    - .vscode/**
+    - __pycache__/**
+    - .ipynb_checkpoints/**
+    - (*).ipynb
+    - Jenkinsfile
+    - sample.py
+    - normal.txt
+    - ml_model.py
+
+
+functions:
+  predict-price-2:
+    handler: handler.predict
+    memorySize: 512
+    timeout: 30
+    events:
+      - http:
+          path: get-price
+          method: get
+          request:
+            parameters:
+              queryStrings:
+                medInc: true
+                houseAge: true
+                aveRooms: true
+                aveBedrms: true
+                population: true
+                aveOccup: true
+                latitude: true
+                longitude: true
+    layers:
