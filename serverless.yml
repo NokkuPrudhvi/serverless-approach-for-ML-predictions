@@ -21,6 +21,7 @@ package:
     - sample.py
     - normal.txt
     - ml_model.py
+    - ml_model_previous_version
 
 
 functions:
