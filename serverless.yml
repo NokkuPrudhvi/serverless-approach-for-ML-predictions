@@ -44,3 +44,4 @@ functions:
                 latitude: true
                 longitude: true
     layers:
+      - arn:aws:lambda:us-west-2:659121023370:layer:sklearn:2
