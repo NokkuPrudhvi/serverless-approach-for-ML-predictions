@@ -37,6 +37,7 @@ model = create_model()
 model.fit(X_data, y_data)
 
 model_id = str(time.time())
-model_name = 'model_' + model_id + '.joblib'
+#model_name = 'model_' + model_id + '.joblib'
+model_name = 'ml_model.joblib'
 joblib.dump(model, model_name, compress=False)
 print(model_name, 'saved.')
